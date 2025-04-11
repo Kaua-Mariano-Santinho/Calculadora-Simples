@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class CalculadoraSimples {
     public static void main(String[] args) {
         //  Declaração de Variáveis
-        int n1, n2, total;
+        int n1, n2, total, op;
 
         // Criação e Instância do Obj. de Entrada
         Scanner entrada = new Scanner(System.in);
@@ -11,17 +11,49 @@ public class CalculadoraSimples {
         // Apresentação
         System.out.println("\n\t\t\t -- Calculadora Simples --\n");
 
-        // Entrada
-        System.out.println("Soma Simples: ");
-        System.out.println("Informe 'n1':");
-        n1 = entrada.nextInt();
-        System.out.println("Informe 'n2':");
-        n2 = entrada.nextInt();
+        // Menu
+        System.out.println("1. Soma");
+        System.out.println("2. Subtração");
+        System.out.println("3. Sair");
 
-        // Processamento
-        total = n1 + n2;
+        System.out.print("Opção: ");
+        op = entrada.nextInt();
 
-        // Saída
-        System.out.println("O Calculo é: " + n1 + " + " + n2 + " = " + total);
+        if (op == 1) {
+            // Entrada
+            System.out.println("Soma Simples: ");
+            System.out.println("Informe um número:");
+            n1 = entrada.nextInt();
+            System.out.println("Informe outro número:");
+            n2 = entrada.nextInt();
+
+            // Processamento
+            total = n1 + n2;
+
+            // Saída
+            System.out.println("O Calculo é: " + n1 + " + " + n2 + " = " + total);
+        }
+
+        if (op == 2) {
+            // Entrada
+            System.out.println("Subtração Simples: ");
+            System.out.println("Informe um número:");
+            n1 = entrada.nextInt();
+            System.out.println("Informe outro número:");
+            n2 = entrada.nextInt();
+
+            // Processamento
+            total = n1 - n2;
+
+            // Saída
+            System.out.println("O Calculo é: " + n1 + " - " + n2 + " = " + total);
+        }
+        if (op == 3) {
+            System.out.println("\n Forte Abraço");
+        }
+        else if(op >= 3) {
+            System.out.println("Escolha uma opção correta..."); 
+        }
+
     }    
 }
